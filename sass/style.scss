@@ -1,0 +1,64 @@
+@use "./base/base";
+@use "./base/reset";
+@use "./global" as *;
+
+// common parts
+.inner {
+  max-width: 1080px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 25px;
+  @include mq("md") {
+    padding-inline: 15px;
+  }
+}
+
+.heading {
+  position: relative;
+  font-size: 36px;
+  font-weight: $medium;
+  letter-spacing: 0.05em;
+  color: $green;
+  padding-bottom: 16px;
+}
+
+.heading::after {
+  position: absolute;
+  background-color: $green;
+  width: 34px;
+  height: 4px;
+  content: "";
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+}
+
+.heading.heading--center {
+  text-align: center;
+  @include mq("md") {
+    text-align: left;
+  }
+}
+
+.heading.heading--center::after {
+  left: 50%;
+  transform: translateX(-50%);
+  @include mq("md") {
+    left: 0;
+    transform: translateX(0);
+  }
+}
+
+.md-none {
+  @include mq("md") {
+    display: none;
+  }
+}
+
+.md-show {
+  display: none;
+
+  @include mq("md") {
+    display: block;
+  }
+}
