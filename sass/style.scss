@@ -39,7 +39,7 @@
     text-align: left;
   }
 }
-
+// transformはYが縦でxが横ではないのか？
 .heading.heading--center::after {
   left: 50%;
   transform: translateX(-50%);
@@ -49,6 +49,55 @@
   }
 }
 
+.text {
+  font-size: 16px;
+  font-weight: $medium;
+  line-height: 1.875;
+  letter-spacing: 0.05em;
+  color: $green;
+}
+
+.text.text--large {
+  font-size: 24px;
+  line-height: 1.833;
+  
+  @include mq("md") {
+    font-size: 20px;
+  }
+}
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  padding: 15.5px 34.5px;
+  letter-spacing: 0.05em;
+  background-color: $green;
+  border-radius: 4px;
+  color: $white;
+  transition: background-color 0.3s;
+  &:hover{
+    opacity: 1;
+    background-color: $green;
+  }
+}
+
+.contact-button.contact-button--large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  padding: 15.5px 47.5px;
+  background-color: $green;
+}
+
+// line-heightは小数点（相対値）で書くことでフォントサイズが変化するとline-heightも勝手に変化する
+
+// bemで記述するときにはclass="heading heading--center"という書き方をするときにはcssは
+
+// .heading.heading--centerという間にスペースを入れない書き方をする
+// ボタンはwidth固定の場合はheightは固定にすると文字数が増えたときに表示崩れの元になるのでheightは指定しない。
 .md-none {
   @include mq("md") {
     display: none;

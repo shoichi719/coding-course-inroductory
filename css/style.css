@@ -192,6 +192,50 @@ select::-ms-expand {
   }
 }
 
+.text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.875;
+  letter-spacing: 0.05em;
+  color: #2B3F2F;
+}
+
+.text.text--large {
+  font-size: 24px;
+  line-height: 1.833;
+}
+@media screen and (max-width: 768px) {
+  .text.text--large {
+    font-size: 20px;
+  }
+}
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  padding: 15.5px 34.5px;
+  letter-spacing: 0.05em;
+  background-color: #2B3F2F;
+  border-radius: 4px;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+.contact-button:hover {
+  opacity: 1;
+  background-color: #2B3F2F;
+}
+
+.contact-button.contact-button--large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  padding: 15.5px 47.5px;
+  background-color: #2B3F2F;
+}
+
 @media screen and (max-width: 768px) {
   .md-none {
     display: none;
