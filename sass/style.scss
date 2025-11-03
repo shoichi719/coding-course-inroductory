@@ -4,47 +4,70 @@
 
 // header
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
   height: 74px;
   background-color: $beige;
 }
 
 .header__inner {
-display: flex;
-height: inherit;
+  display: flex;
+  align-items: center;
+  padding: 0 120px;
+  height: inherit;
 }
 
 .header__name {
+  font-size: 26px;
+  font-weight: $medium;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  color: $green;
+}
+
+.header__nav {
+  height: inherit;
+}
+
+.header__items {
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+
+.header__item {
+  height: inherit;
+}
+
+.header__item:not(:first-child) {
+  margin-left: 66px;
+  height: inherit;
+}
+
+.header__link {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: $medium;
+  color: $green;
+  letter-spacing: 0.05em;
   height: inherit;
 
 }
 
-.header__nav {
-display: flex;
-height: inherit;
-}
-
-.header__items {
-display: flex;
-height: inherit;
-}
-
-.header__item {
-
-}
-
-.header__link {
-
-}
-
 .header__contact {
-
+  margin-left: 66px;
 }
-
-.contact-button {
-
-}
+// 今回は一度html scssのコーディング動画を通しで見て書いてみようと思いましたが、ほぼ自力では書けず。そのため、逐一scssのコーディング動画を見ては画面を変えて書く。と言う状態になりました。
+// 中々一度通しで見た動画を理解してほぼ書ける。と言うのは難しいところです。あとは途中で  align-items: center;を書いてますが動画を見て、  justify-content: center;はいらないの？と思い書いて見ましたが表示がおかしくなりました。
+// できないなら仕方ないから、まずは悔しさを胸に動画を見て素直に正解のコードを書こう。と思いました。
 // コーディング動画を見てからやってみようと思いましたが、cssになった途端に何を書けばいいのかわからない状態になりました。頭の中真っ白です。
-
+// できない自分が悔しいです。
 
 // common parts
 .inner {
@@ -104,7 +127,7 @@ height: inherit;
 .text.text--large {
   font-size: 24px;
   line-height: 1.833;
-  
+
   @include mq("md") {
     font-size: 20px;
   }
@@ -121,7 +144,7 @@ height: inherit;
   border-radius: 4px;
   color: $white;
   transition: background-color 0.3s;
-  &:hover{
+  &:hover {
     opacity: 1;
     background-color: $green;
   }
