@@ -2,6 +2,50 @@
 @use "./base/reset";
 @use "./global" as *;
 
+// header
+.header {
+  height: 74px;
+  background-color: $beige;
+}
+
+.header__inner {
+display: flex;
+height: inherit;
+}
+
+.header__name {
+  height: inherit;
+
+}
+
+.header__nav {
+display: flex;
+height: inherit;
+}
+
+.header__items {
+display: flex;
+height: inherit;
+}
+
+.header__item {
+
+}
+
+.header__link {
+
+}
+
+.header__contact {
+
+}
+
+.contact-button {
+
+}
+// コーディング動画を見てからやってみようと思いましたが、cssになった途端に何を書けばいいのかわからない状態になりました。頭の中真っ白です。
+
+
 // common parts
 .inner {
   max-width: 1080px;

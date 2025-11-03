@@ -140,6 +140,30 @@ select::-ms-expand {
   display: none;
 }
 
+.header {
+  height: 74px;
+  background-color: #f7f7ee;
+}
+
+.header__inner {
+  display: flex;
+  height: inherit;
+}
+
+.header__name {
+  height: inherit;
+}
+
+.header__nav {
+  display: flex;
+  height: inherit;
+}
+
+.header__items {
+  display: flex;
+  height: inherit;
+}
+
 .inner {
   max-width: 1080px;
   width: 100%;
