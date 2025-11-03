@@ -228,9 +228,6 @@ select::-ms-expand {
 }
 
 .contact-button.contact-button--large {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 220px;
   padding: 15.5px 47.5px;
   background-color: #2B3F2F;
