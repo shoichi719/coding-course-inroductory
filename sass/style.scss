@@ -18,8 +18,14 @@
   align-items: center;
   padding: 0 120px;
   height: inherit;
+  @include mq("lg") {
+    padding-inline: 25px;
+  }
+  @include mq("md") {
+    padding-inline: 15px;
+  }
 }
-
+// header__innerは画面幅変化してナビゲーションメニューが消えない。なぜ？
 .header__name {
   font-size: 26px;
   font-weight: $medium;
@@ -28,6 +34,9 @@
   align-items: center;
   margin-right: auto;
   color: $green;
+  @include mq("md") {
+    font-size: 24px;
+  }
 }
 
 .header__nav {
@@ -57,17 +66,113 @@
   color: $green;
   letter-spacing: 0.05em;
   height: inherit;
-
 }
 
 .header__contact {
   margin-left: 66px;
 }
-// 今回は一度html scssのコーディング動画を通しで見て書いてみようと思いましたが、ほぼ自力では書けず。そのため、逐一scssのコーディング動画を見ては画面を変えて書く。と言う状態になりました。
-// 中々一度通しで見た動画を理解してほぼ書ける。と言うのは難しいところです。あとは途中で  align-items: center;を書いてますが動画を見て、  justify-content: center;はいらないの？と思い書いて見ましたが表示がおかしくなりました。
-// できないなら仕方ないから、まずは悔しさを胸に動画を見て素直に正解のコードを書こう。と思いました。
-// コーディング動画を見てからやってみようと思いましたが、cssになった途端に何を書けばいいのかわからない状態になりました。頭の中真っ白です。
-// できない自分が悔しいです。
+
+// hamburger-menu
+.hamburger {
+  position: fixed;
+  z-index: 9999;
+  top: 30px;
+  right: 15px;
+  width: 25px;
+  height: 16px;
+  cursor: pointer;
+}
+// ↑のwidth,heightの数値はどこからきた？
+
+.hamburger span {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  transition: transform 0.3s;
+  background-color: $green;
+}
+// ↑この時点で画面に線が出てきた。
+
+.hamburger.is-active {
+  right: 30px;
+}
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+.hamburger span:nth-child(2) {
+  top: 8px;
+  transition: opacity 0.3s;
+}
+.hamburger span:nth-child(3) {
+  top: 16px;
+}
+// ↑は書きながら随時変化を確認。いや、リアルタイムか。
+
+.hamburger.is-active span:nth-child(1) {
+  top: 15px;
+  transform: rotate(-45deg);
+}
+.hamburger.is-active span:nth-child(2) {
+  top: 15px;
+  // transition: opacity 0;
+  opacity: 0;
+}
+.hamburger.is-active span:nth-child(3) {
+  top: 15px;
+  transform: rotate(45deg);
+}
+
+// drawer-menu
+.drawer-menu {
+  position: absolute;
+  z-index: 5000;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background-color: $beige;
+}
+
+.drawer-menu__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: inherit;
+}
+
+.drawer-menu__items {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.drawer-menu__item {
+display: inline-block;
+}
+
+.drawer-menu__item:not(:first-child) {
+  margin-top: 50px;
+}
+
+.drawer-menu__link {
+  font-size: 16px;
+  color: $green;
+  font-weight: $medium;
+  letter-spacing: 0.05em;
+  
+}
+
+.drawer-menu__contact {
+  margin-top: 50px;
+}
+
+
+
 
 // common parts
 .inner {
@@ -152,19 +257,13 @@
 
 .contact-button.contact-button--large {
   // display: flex;
-  // align-items: center;f
+  // align-items: center;
   // justify-content: center;
   width: 220px;
   padding: 15.5px 47.5px;
   background-color: $green;
 }
 
-// line-heightは小数点（相対値）で書くことでフォントサイズが変化するとline-heightも勝手に変化する
-
-// bemで記述するときにはclass="heading heading--center"という書き方をするときにはcssは
-
-// .heading.heading--centerという間にスペースを入れない書き方をする
-// ボタンはwidth固定の場合はheightは固定にすると文字数が増えたときに表示崩れの元になるのでheightは指定しない。
 .md-none {
   @include mq("md") {
     display: none;

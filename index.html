@@ -47,22 +47,20 @@
     <link rel="stylesheet" href="./css/style.css" />
 
     <!-- JavaScript -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.1.min.js"
-      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-      crossorigin="anonymous"
-      defer
-    ></script>
-    <script src="/js/script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+    crossorigin="anonymous" defer>
+  </script>
+    <script src="./js/script.js" defer></script>
   </head>
 
   <body>
     <!-- header -->
-    <header id="header" class="header">
+    <header id="header" class="header js-header">
       <div class="header__inner">
         <h1 class="header__name">ExciteCode</h1>
         <nav class="header__nav">
-          <ul class="header__items">
+          <ul class="header__items md-none">
             <li class="header__item">
               <a href="#vision" class="header__link">Vision</a>
             </li>
@@ -74,7 +72,35 @@
             </li>
           </ul>
         </nav>
-        <a href="" class="header__contact contact-button">Contact</a>
+        <a href="" class="header__contact contact-button md-none">Contact</a>
+      </div>
+
+      <!-- hamburger-menu -->
+      <div class="hamburger js-hamburger md-show">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- md-showを付けたら画面幅が切り替わった瞬間にナビゲーションメニューが消え、ハンバーガーメニューが出現した。 -->
+
+      <!-- drawer-menu -->
+      <div class="drawer-menu js-drawer">
+        <div class="drawer-menu__inner">
+          <ul class="drawer-menu__items">
+            <li class="drawer-menu__item">
+              <a href="#vision" class="drawer-menu__link">Vision</a>
+            </li>
+            <li class="drawer-menu__item">
+              <a href="#service" class="drawer-menu__link">Service</a>
+            </li>
+            <li class="drawer-menu__item">
+              <a href="#news" class="drawer-menu__link">News</a>
+            </li>
+          </ul>
+          <a href="#contact" class="drawer-menu__contact contact-button"
+            >Contact</a
+          >
+        </div>
       </div>
     </header>
 
