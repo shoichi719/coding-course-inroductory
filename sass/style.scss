@@ -206,6 +206,32 @@ display: inline-block;
 }
 // 今回はmain-viewのcodingでした。正直回数がまだ少ないことをあってかcssはまだ何をどこに当てるのかわからないでいます。
 
+// vision
+.vision {
+  padding-block: 145px 120px;
+  @include mq("md"){
+    padding-block: 135px 140px;
+  }
+}
+// .vision__inner {
+
+// }
+
+// .vision__heading {
+
+// }
+// これらの二つのセレクタはいらないようです。全てのセレクタに記述をしなければならない。と言うわけではないみたいです。
+// これは今まで知らなかったことです。てっきり全てのクラス名をセレクタにしてプロパティを書かなければならないと思い込んでいましたが、
+// そうではないようです。
+
+.vision__title {
+  margin-top: 50px;
+}
+
+.vision__text {
+  margin-top: 30px;
+}
+
 
 
 // common parts

@@ -347,6 +347,23 @@ select::-ms-expand {
   }
 }
 
+.vision {
+  padding-block: 145px 120px;
+}
+@media screen and (max-width: 768px) {
+  .vision {
+    padding-block: 135px 140px;
+  }
+}
+
+.vision__title {
+  margin-top: 50px;
+}
+
+.vision__text {
+  margin-top: 30px;
+}
+
 .inner {
   max-width: 1080px;
   width: 100%;
