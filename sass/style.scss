@@ -152,7 +152,7 @@
 }
 
 .drawer-menu__item {
-display: inline-block;
+  display: inline-block;
 }
 
 .drawer-menu__item:not(:first-child) {
@@ -164,7 +164,6 @@ display: inline-block;
   color: $green;
   font-weight: $medium;
   letter-spacing: 0.05em;
-  
 }
 
 .drawer-menu__contact {
@@ -197,7 +196,7 @@ display: inline-block;
   line-height: 1.375;
   letter-spacing: 0.05em;
   color: $beige2;
-  @include mq("md"){
+  @include mq("md") {
     font-size: 30px;
     line-height: 1.467;
     letter-spacing: 0.05em;
@@ -209,7 +208,7 @@ display: inline-block;
 // vision
 .vision {
   padding-block: 145px 120px;
-  @include mq("md"){
+  @include mq("md") {
     padding-block: 135px 140px;
   }
 }
@@ -232,7 +231,47 @@ display: inline-block;
   margin-top: 30px;
 }
 
+// service
+.service {
+  padding-block: 100px;
+  background-color: $beige;
+}
 
+.service__inner {
+}
+
+.inner {
+}
+
+.service__heading {
+}
+
+.heading {
+}
+
+.heading--center {
+}
+.service__cards {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 35px;
+  row-gap: 46px;
+}
+.service__card {
+
+}
+
+.card {
+}
+
+.card__img {
+}
+
+.card__title {
+  margin-top: 20px;
+  text-align: center;
+}
 
 // common parts
 .inner {

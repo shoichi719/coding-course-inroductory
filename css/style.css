@@ -364,6 +364,25 @@ select::-ms-expand {
   margin-top: 30px;
 }
 
+.service {
+  padding-block: 100px;
+  background-color: #f7f7ee;
+}
+
+.service__cards {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 35px;
+       column-gap: 35px;
+  row-gap: 46px;
+}
+
+.card__title {
+  margin-top: 20px;
+  text-align: center;
+}
+
 .inner {
   max-width: 1080px;
   width: 100%;
